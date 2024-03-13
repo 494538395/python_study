@@ -23,7 +23,7 @@ def read_excel_and_write_to_redis(file_path, redis_db):
 def handleMetaData(sheet, redis_db):
     for row in sheet.iter_rows(min_row=2, values_only=True):
         # 接收数据
-        app_id, task_group_id, period_id, object_id, task_id, progress, claim_prog, task_group_finish, replace_count, replace_list = row
+        app_id, task_group_id, period_id, object_id, task_id, progress, claim_prog, replace_count, replace_list, task_group_finish, expire = row
         # 拼接 key
         key = f"evt:mt:{int(app_id)}:{int(task_group_id)}:{int(period_id)}:{{{object_id}}}"
 
@@ -35,10 +35,21 @@ def handleMetaData(sheet, redis_db):
         rsField = f"rs_{int(task_id)}"
         redis_db.hset(key, rsField, int(claim_prog))
 
+        # 设置已替换任务次数
+        replaceCountField = f"replace_count"
+        redis_db.hset(key, replaceCountField, int(replace_count))
+
+        # 设置已替换任务列表
+        replaceListField = f"replace_list"
+        redis_db.hset(key, replaceListField, replace_list)
+
         # 设置任务组完成标记
         if task_group_finish:
             finishField = "group_finish"
             redis_db.hset(key, finishField, "true")
+        # 设置过期时间
+        if int(expire) > 0:
+            redis_db.expire(key, int(expire))
 
 
 def handleGlobalTask(sheet, redis_db):
@@ -54,13 +65,17 @@ def handleGlobalTask(sheet, redis_db):
 def handleTaskPool(sheet, redis_db):
     for row in sheet.iter_rows(min_row=2, values_only=True):
         # 接收数据
-        app_id, task_group_id, period_id, object_id, task_pool = row
+        app_id, task_group_id, period_id, object_id, task_pool, expire = row
         # 拼接 key
         poolKey = f"evt:tk:{int(app_id)}:{int(task_group_id)}:{int(period_id)}:{{{object_id}}}"
         # 切分数据
         task_list = task_pool.split(',')
         # 写库
         redis_db.sadd(poolKey, *task_list)
+
+        # 设置过期时间
+        if int(expire) > 0:
+            redis_db.expire(poolKey, int(expire))
 
 
 if __name__ == "__main__":
@@ -71,4 +86,3 @@ if __name__ == "__main__":
     read_excel_and_write_to_redis("transfer.xlsx", r)
 
     print("process end")
-
