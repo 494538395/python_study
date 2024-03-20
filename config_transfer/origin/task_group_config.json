@@ -1,0 +1,204 @@
+{
+  "taskGroupConfig": [
+    {
+      "id": 600,
+      "groupType": 4,
+      "interval": 86400,
+      "resetTaskCount": 3,
+      "needSubscribed": true,
+      "replaceCount": 5,
+      "taskListStage": [
+        {
+          "cond": [
+            {
+              "taskId": 1,
+              "expr": "=",
+              "val": 20
+            }
+          ],
+          "list": [
+            {
+              "taskId": 1,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 2,
+              "stages": [
+                {
+                  "prog": 10,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 3,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 4,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cond": [
+            {
+              "taskId": 1,
+              "expr": ">",
+              "val": 10
+            }
+          ],
+          "list": [
+            {
+              "taskId": 1,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 2,
+              "stages": [
+                {
+                  "prog": 10,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 3,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "preGroups": [
+      ],
+      "startTime": 1710223835,
+      "endTime": -1
+    },
+    {
+      "id": 601,
+      "groupType": 1,
+      "resetTaskCount": 3,
+      "needSubscribed": true,
+      "replaceCount": 5,
+      "taskListStage": [
+        {
+          "cond": [
+            {
+              "taskId": 1,
+              "expr": ">",
+              "val": 10
+            }
+          ],
+          "list": [
+            {
+              "taskId": 2,
+              "stages": [
+                {
+                  "prog": 10,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 3,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "taskId": 3,
+              "stages": [
+                {
+                  "prog": 9,
+                  "rewards": [
+                    {
+                      "itemId": 1,
+                      "itemCnt": 50
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "preGroups": [
+      ],
+      "startTime": 1701002854,
+      "endTime": 4101112907
+    }
+  ]
+}

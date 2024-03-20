@@ -1,0 +1,185 @@
+{
+  "taskEventConfig": [
+    {
+      "id": 1,
+      "event": "battle.finish",
+      "msgType": "",
+      "topic": "pawn-wis-battle",
+      "target": {
+        "type": 1,
+        "field": "nan",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "nan",
+          "keyType": "nan",
+          "formula": "",
+          "expr": "nan",
+          "val": "nan"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "event": "battle.finish",
+      "msgType": "",
+      "topic": "pawn-wis-battle",
+      "target": {
+        "type": 1,
+        "field": "nan",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "mode",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "1.0"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "event": "battle.finish",
+      "msgType": "",
+      "topic": "pawn-wis-battle",
+      "target": {
+        "type": 1,
+        "field": "nan",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "mode",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "2.0"
+        },
+        {
+          "key": "result",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "1.0"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "event": "battle.finish",
+      "msgType": "",
+      "topic": "pawn-wis-battle",
+      "target": {
+        "type": 0,
+        "field": "starCnt",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "mode",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "1.0"
+        },
+        {
+          "key": "result",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "1.0"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "event": "battle.finish",
+      "msgType": "",
+      "topic": "pawn-wis-battle",
+      "target": {
+        "type": 0,
+        "field": "totalDamage",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "mode",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "3.0"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "event": "build.upgrade",
+      "msgType": "",
+      "topic": "pawn-wis-grow",
+      "target": {
+        "type": 1,
+        "field": "nan",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "mode",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "3.0"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "event": "build.upgrade",
+      "msgType": "",
+      "topic": "pawn-wis-grow",
+      "target": {
+        "type": 0,
+        "field": "newLv",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "bdType",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "1016.0"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "event": "battle.finish",
+      "msgType": "",
+      "topic": "pawn-wis-battle",
+      "target": {
+        "type": 0,
+        "field": "battleTime",
+        "formula": ""
+      },
+      "cond": [
+        {
+          "key": "mode",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "4.0"
+        },
+        {
+          "key": "result",
+          "keyType": "int",
+          "formula": "",
+          "expr": "=",
+          "val": "1.0"
+        }
+      ]
+    }
+  ]
+}

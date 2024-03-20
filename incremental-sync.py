@@ -48,7 +48,6 @@ def taskClaim(app_id, object_id, task_group_id, period_id, task_id, claim_prog):
     # 写库
     redis_db.hset(key, rsField, int(claim_prog))
 
-
 # 设任务进度
 def setTaskProgress(app_id, object_id, task_group_id, period_id, task_id, progress, expire):
     # 初始化 Redis client
@@ -71,7 +70,6 @@ def setTaskProgress(app_id, object_id, task_group_id, period_id, task_id, progre
     if int(expire) > 0:
         redis_db.expire(key, int(expire))
 
-
 # 设全局任务进度
 def setGlobalTaskProgress(app_id, object_id, task_id, progress):
     # 初始化 Redis client
@@ -87,7 +85,6 @@ def setGlobalTaskProgress(app_id, object_id, task_id, progress):
     key = f"evt:global:{int(app_id)}:{int(task_id)}:{{{object_id}}}"
     # 写库
     redis_db.set(key, int(progress))
-
 
 # 设任务池
 def setTaskPool(app_id, object_id, task_group_id, period_id, task_pool, expire):
@@ -114,7 +111,6 @@ def setTaskPool(app_id, object_id, task_group_id, period_id, task_pool, expire):
     if int(expire) > 0:
         redis_db.expire(key, int(expire))
 
-
 # 设任务完成标记
 def setTaskGroupFinish(app_id, object_id, task_group_id, period_id):
     # 初始化 Redis client
@@ -132,7 +128,6 @@ def setTaskGroupFinish(app_id, object_id, task_group_id, period_id):
     finishField = "group_finish"
     # 写库
     redis_db.hset(key, finishField, "true")
-
 
 # 设已替换任务次数、已替换任务列表
 def setReplaceCountAndList(app_id, object_id, task_group_id, period_id, replace_count, replace_list):
