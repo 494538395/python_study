@@ -1,5 +1,8 @@
-import pandas as pd
 import json
+
+import pandas as pd
+
+
 def getBasInfo():
     # 读取前7列
     df1 = df.iloc[:, :7]
@@ -15,7 +18,7 @@ def getBasInfo():
                 "topic": str(row[3]),
                 "target": {
                     "type": int(row[4]),
-                    "field": str(row[5]),
+                    "field": str(row[5]) if not pd.isnull(row[5]) else "",
                     "formula": str(row[6]) if not pd.isnull(row[6]) else "",
                 }
             }
@@ -51,6 +54,9 @@ if __name__ == '__main__':
     excel_file_path = './config.xlsx'
     df = pd.read_excel(excel_file_path, skiprows=2, sheet_name=0, header=None)
     baseInfo = getBasInfo()
+    print(json.dumps(baseInfo, indent=2))
+    print("----------------------------------")
+
     condRes = getCond()
 
     # merge all data
@@ -68,5 +74,3 @@ if __name__ == '__main__':
                 )
 
     print(json.dumps(baseInfo, indent=2))
-
-

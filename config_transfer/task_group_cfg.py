@@ -14,7 +14,7 @@ def getBasInfo():
                 "id": int(row[0]),
                 "groupType": int(row[1]),
                 "interval": int(row[2]) if not pd.isnull(row[2]) else 0,
-                "resetTaskCount": int(row[3]) if not pd.isnull(row[2]) else 0,
+                "resetTaskCount": int(row[3]),
                 "needSubscribed": bool(row[4]),
                 "replaceCount": int(row[5]) if not pd.isnull(row[5]) else 0,
                 "preGroups": getPreGroups(str(row[6])),
