@@ -51,7 +51,7 @@ def getCond():
 
 
 if __name__ == '__main__':
-    excel_file_path = './config.xlsx'
+    excel_file_path = 'config.xlsx'
     df = pd.read_excel(excel_file_path, skiprows=2, sheet_name=0, header=None)
     baseInfo = getBasInfo()
     print(json.dumps(baseInfo, indent=2))

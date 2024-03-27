@@ -13,7 +13,7 @@ REDIS_DB = 7
 SERVER_ADDRESS = "10.0.1.84:38848"  # 服务器地址,多台需要用,隔开
 GROUP_ID = 'event-center-v2'
 NAMESPACE = 'public'
-LOG_DIR = './nacos/log'
+LOG_DIR = '../nacos/log'
 
 
 def init_redis_client():

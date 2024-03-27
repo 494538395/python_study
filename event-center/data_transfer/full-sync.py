@@ -83,6 +83,6 @@ if __name__ == "__main__":
     r = redis.Redis(host='10.0.1.71', port=6379, db=7)
     #
     # Read Excel and write to Redis
-    read_excel_and_write_to_redis("transfer.xlsx", r)
+    read_excel_and_write_to_redis("../../transfer.xlsx", r)
 
     print("process end")

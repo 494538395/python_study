@@ -19,7 +19,7 @@ def getBasInfo():
 
 
 if __name__ == '__main__':
-    excel_file_path = './config.xlsx'
+    excel_file_path = 'config.xlsx'
     df = pd.read_excel(excel_file_path, skiprows=1, sheet_name=1, header=None)
     baseInfo = getBasInfo()
     print(json.dumps(baseInfo, indent=2))

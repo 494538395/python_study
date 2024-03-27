@@ -129,7 +129,7 @@ def getTaskIds():
 
 
 if __name__ == '__main__':
-    excel_file_path = './config.xlsx'
+    excel_file_path = 'config.xlsx'
     df = pd.read_excel(excel_file_path, skiprows=4, sheet_name=2, header=None)
 
     baseInfo = getBasInfo()
