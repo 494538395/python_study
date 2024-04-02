@@ -1,0 +1,162 @@
+{
+  "schema": {
+    "taskGroupConfig": {
+      "type": "table",
+      "title": "任务组信息",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "input",
+            "title": "任务组Id",
+            "params": {
+              "type": "integer"
+            }
+          },
+          "groupType": {
+            "type": "custom",
+            "title": "任务组类型",
+            "importInfo": {
+              "importName": "任务组类型",
+              "importParam": {
+                "name": "jerry"
+              }
+            }
+          },
+          "interval": {
+            "type": "input",
+            "title": "重置频率(当任务组类型为【自定义过期频率】此属性才生效)",
+            "params": {
+              "type": "integer"
+            }
+          },
+          "resetTaskCount": {
+            "type": "input",
+            "title": "重置任务数",
+            "params": {
+              "type": "integer"
+            }
+          },
+          "needSubscribe": {
+            "type": "selector",
+            "title": "订阅类型",
+            "importInfo": {
+              "importName": "任务组订阅类型"
+            }
+          },
+          "replaceTaskCount": {
+            "type": "input",
+            "title": "可替换任务数",
+            "params": {
+              "type": "integer"
+            }
+          },
+          "startTime": {
+            "type": "timer",
+            "title": "任务组开始时间"
+          },
+          "endTime": {
+            "type": "timer",
+            "title": "任务组结束时间"
+          },
+          "stages": {
+            "type": "table",
+            "title": "分档策略",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cond": {
+                  "type": "table",
+                  "title": "分档条件",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "taskId": {
+                        "type": "input",
+                        "title": "全局任务Id",
+                        "params": {
+                          "type": "integer"
+                        }
+                      },
+                      "expr": {
+                        "type": "custom",
+                        "title": "表达式",
+                        "importInfo": {
+                          "importName": "表达式类型"
+                        }
+                      },
+                      "val": {
+                        "type": "input",
+                        "title": "目标值",
+                        "params": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "taskList": {
+            "type": "table",
+            "title": "任务列表",
+            "items": {
+              "type": "object",
+              "properties": {
+                "taskId": {
+                  "type": "input",
+                  "title": "任务Id",
+                  "importInfo": {
+                    "importName": "任务列表",
+                    "importParam": {
+                      "nacos_group": "event-center-v2"
+                    }
+                  }
+                },
+                "stage": {
+                  "type": "input",
+                  "title": "所属任务组档位",
+                  "params": {
+                    "type": "integer"
+                  }
+                },
+                "prog": {
+                  "type": "input",
+                  "title": "目标进度值",
+                  "params": {
+                    "type": "integer"
+                  }
+                },
+                "rewards": {
+                  "type": "table",
+                  "title": "阶段奖励",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "itemId": {
+                        "type": "input",
+                        "title": "奖励物品Id",
+                        "params": {
+                          "type": "integer"
+                        }
+                      },
+                      "itemCnt": {
+                        "type": "input",
+                        "title": "奖励物品数量",
+                        "params": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "title": "任务组配置"
+}

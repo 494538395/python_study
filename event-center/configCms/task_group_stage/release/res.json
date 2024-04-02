@@ -1,0 +1,31 @@
+{
+  "taskGroupConfig": [
+    {
+      "id": 600,
+      "groupType": 1,
+      "interval": 0,
+      "resetTaskCount": 0,
+      "needSubscribed": true,
+      "replaceTaskCount": 0,
+      "preGroups": [],
+      "startTime": 1712043873,
+      "endTime": 1712043875,
+      "taskListStage": [
+        {
+          "list": [
+            {
+              "taskId": 1,
+              "stages": [
+                {
+                  "prog": 10,
+                  "rewards": []
+                }
+              ]
+            }
+          ],
+          "cond": []
+        }
+      ]
+    }
+  ]
+}

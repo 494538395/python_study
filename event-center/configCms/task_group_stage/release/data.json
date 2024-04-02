@@ -1,0 +1,22 @@
+{
+  "simple_test": {
+    "taskGroupConfig": [
+      {
+        "id": 600,
+        "groupType": 1,
+        "needSubscribe": true,
+        "preGroups": [],
+        "startTime": 1712043873,
+        "endTime": 1712043875,
+        "stages": [],
+        "taskList": [
+          {
+            "taskId": 1,
+            "prog": 10,
+            "rewards": []
+          }
+        ]
+      }
+    ]
+  }
+}
