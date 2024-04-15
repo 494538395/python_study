@@ -2,29 +2,46 @@
   "simple_test": {
     "rules": [
       {
-        "name": "111",
-        "conditions": [
-          {
-            "desc": "111",
-            "field": "lv",
-            "type": "term",
-            "range": {},
-            "size": 0,
-            "sort": {
-              "fields": [
-                "pvpRank"
-              ],
-              "order": "desc"
-            }
-          }
-        ],
+        "name": "匹配规则01",
         "sort": {
           "fields": [
-            "cupScore",
             "pvpRank"
           ],
           "order": "desc"
-        }
+        },
+        "conditionSets": [
+          {
+            "desc": "条件组01",
+            "conditionSet": [
+              {
+                "field": "lv",
+                "type": "term",
+                "range": {}
+              },
+              {
+                "field": "age",
+                "type": "not_term",
+                "range": {}
+              }
+            ],
+            "size": 2
+          },
+          {
+            "desc": "条件组02",
+            "conditionSet": [
+              {
+                "field": "pvpRank",
+                "type": "range",
+                "range": {
+                  "min": -10,
+                  "max": 10,
+                  "accurate": false
+                }
+              }
+            ],
+            "size": 0
+          }
+        ]
       }
     ]
   }

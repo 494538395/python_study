@@ -23,10 +23,6 @@ def gen_json(json_data: any) -> str:
         if 'fields' in rule['sort']:
             sort = gen_sort(rule['sort']['fields'], rule['sort']['order'])
             rule['sort'] = sort
-        for cond in rule['conditions']:
-            # 将 rangeMin 和 rangeMax 转换为 range 字段
-            if 'min' in cond['range']:
-                cond['range'] = {'min': cond.pop('rangeMin'), 'max': cond.pop('rangeMax')}
 
     return json.dumps(data, ensure_ascii=False)
 
