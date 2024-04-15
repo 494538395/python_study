@@ -1,0 +1,31 @@
+{
+  "simple_test": {
+    "rules": [
+      {
+        "name": "111",
+        "conditions": [
+          {
+            "desc": "111",
+            "field": "lv",
+            "type": "term",
+            "range": {},
+            "size": 0,
+            "sort": {
+              "fields": [
+                "pvpRank"
+              ],
+              "order": "desc"
+            }
+          }
+        ],
+        "sort": {
+          "fields": [
+            "cupScore",
+            "pvpRank"
+          ],
+          "order": "desc"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "simple_test": {
+    "modes": [
+      {
+        "name": "pve-match",
+        "stages": [
+          {
+            "field": "ramk",
+            "rangeMin": 1,
+            "rangeMax": 20,
+            "matchRule": "cup_score_stage"
+          }
+        ],
+        "fallback": {
+          "threshold": 2,
+          "matchRule": "lv_miked_rank_and_cup_score"
+        }
+      },
+      {
+        "name": "pvp-match",
+        "stages": [
+          {
+            "field": "rank",
+            "rangeMin": 1,
+            "rangeMax": 10,
+            "matchRule": "cup_score_stage"
+          },
+          {
+            "field": "rank",
+            "rangeMin": 10,
+            "rangeMax": 20,
+            "matchRule": "lv_miked_rank_and_cup_score"
+          },
+          {
+            "field": "rank",
+            "rangeMin": 20,
+            "rangeMax": 30,
+            "matchRule": "pvp-elite_rank_fallback"
+          }
+        ],
+        "fallback": {
+          "threshold": 2,
+          "matchRule": "pvp-elite_rank_fallback"
+        }
+      }
+    ]
+  }
+}
