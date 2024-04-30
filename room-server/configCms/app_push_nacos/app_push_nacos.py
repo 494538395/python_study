@@ -3,32 +3,20 @@ import json
 import requests
 
 # Nacos
-MATCH_MODE_CONFIG = "match_mode_config"
-MATCH_RULE_CONFIG = 'match_rule_config'
-STORAGE_RULE_CONFIG = 'storage_rule_config'
+ROOM_CONFIG = "room_config"
 SEPARATOR = '_'
 
 
-# 生成匹配模式配置 dataId
-def gen_match_mode_data_id(appId):
-    return str(appId) + SEPARATOR + MATCH_MODE_CONFIG
-
-
-# 生成匹配规则配置 dataId
-def gen_match_rule_data_id(appId):
-    return str(appId) + SEPARATOR + MATCH_RULE_CONFIG
-
-
-# 生成存储规则匹配 dataId
-def gen_storage_rule_data_id(appId):
-    return str(appId) + SEPARATOR + STORAGE_RULE_CONFIG
+# 生成房间配置 dataId
+def gen_room_config_data_id(appId):
+    return str(appId) + SEPARATOR + ROOM_CONFIG
 
 
 # 生成默认 nacos content
 def gen_default_nacos_content(dataId):
     content = {
         "dataId": dataId,
-        "defaultContent": "",
+        "defaultContent": '{"roomConfig":[]}',
         "remote": None,
         "experiments": None
     }
@@ -39,21 +27,19 @@ def gen_default_nacos_content(dataId):
 # 生成 dataId
 def gen_data_ids(appId):
     data_ids = [
-        gen_match_mode_data_id(appId),
-        gen_match_rule_data_id(appId),
-        gen_storage_rule_data_id(appId)
+        gen_room_config_data_id(appId),
     ]
     return data_ids
 
 
 def gen_app_config(params: dict) -> str:
+    print("params-->", params)
+
     # 解析参数
     app_id = params.get("AppId")
     nacos_url = params.get("NacosUrl")
     nacos_group = params.get("NacosGroup")
     nacos_namespace = params.get("NacosNamespace")
-
-    print("params-->", params)
 
     # 生成 dataId
     data_ids = gen_data_ids(app_id)

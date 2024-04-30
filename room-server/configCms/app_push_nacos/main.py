@@ -2,10 +2,12 @@ import app_push_nacos
 
 if __name__ == '__main__':
     param = {
-        "AppId": 666,
+        "AppId": 999,
         "NacosUrl": "http://10.0.1.84:38848",
-        "NacosGroup": 'offline-match-server',
-        'NacosNamespace':'base-common-service'
+        "NacosGroup": 'room-server',
+        "NacosNamespace": "base-common-service"
     }
+
+
 
     app_push_nacos.gen_app_config(param)

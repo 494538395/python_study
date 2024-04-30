@@ -2,9 +2,9 @@ import app_push_nacos
 
 if __name__ == '__main__':
     param = {
-        "AppId": 8885,
-        "NacosUrl": "http://nacos.89tgame.com:82",
-        "NacosGroup": 'rank-server',
+        "AppId": 666,
+        "NacosUrl": "http://10.0.1.84:38848",
+        "NacosGroup": 'room-server',
         "NacosNamespace": "base-common-service"
     }
 

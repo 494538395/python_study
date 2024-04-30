@@ -5,7 +5,7 @@ if __name__ == '__main__':
         "common_params": {
             "appId": 999
         },
-        "nacos_group_id": "offline-match-server"
+        "nacos_group_id": "room-server"
     }
 
     gen_template = math_rule_list.gen_template(param)
