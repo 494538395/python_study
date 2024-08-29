@@ -70,6 +70,8 @@ def gen_app_config(params: dict) -> str:
 
 # 检查 dataId 是否存在
 def check_data_id_exist(data_id, nacos_url, nacos_group, nacos_namespace) -> bool:
+    data_id="app_config"
+
     # 构建请求的 URL
     url = f"{nacos_url}/nacos/v1/cs/configs?dataId={data_id}&tenant={nacos_namespace}&group={nacos_group}"
 
